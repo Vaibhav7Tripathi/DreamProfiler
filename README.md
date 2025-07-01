@@ -86,7 +86,7 @@ Emotion Entropy = how **focused** or **scattered** the detected emotional landsc
 
 Below is the complete interpretation pipeline used by DreamProfiler:
 
-![DreamProfiler Flowchart](./flowchart%202.png)
+![DreamProfiler Flowchart](./Flowchart.png)
 
 ---
 
