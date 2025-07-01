@@ -1,114 +1,116 @@
 # 🌙 DreamProfiler: Personalized AI-Powered Dream Interpretation
 
-DreamProfiler is a memory-based AI system designed to interpret dreams through a **personalized and emotionally grounded lens**. Unlike generic LLMs, it learns from a user’s past dreams to provide context-aware and psychologically meaningful insights.
+DreamProfiler is an intelligent, memory-based AI system that interprets dreams through a **personalized** and **emotionally grounded** lens. Unlike generic LLMs, it learns from each user’s dream history to provide **context-aware, psychologically meaningful** insights.
 
 ---
 
-## 📌 Project Overview
+## 📌 Overview
 
-🔍 **What it does:**
-- Detects and explains **dominant emotions** and their intensity  
-- Identifies and remembers **recurring symbols** and metaphors  
-- Tracks **emotional arcs and dream evolution** over time  
-- Outputs interpretations in a **thoughtful, structured format**
+### 🔍 What DreamProfiler Does:
+- 🔬 Detects and explains **dominant emotions** and their intensities  
+- 🧠 Identifies and remembers **recurring symbols and metaphors**  
+- 📈 Tracks **emotional arcs** and **dream evolution** over time  
+- 📘 Outputs structured and psychologically sound interpretations  
 
-🧠 **How it's different:**
-- Builds **user-specific dream profiles**  
-- Works **offline** with local models  
-- Focuses on **emotion entropy** and **symbol consistency** instead of rigid NLP accuracy metrics  
+### 🧠 What Makes It Different:
+- 🪞 Builds **user-specific dream profiles**
+- 💾 Works **offline** with **local transformer models**
+- 📊 Focuses on **emotion entropy** and **symbolic consistency**, not generic NLP metrics
 
 ---
 
-## 💻 Setup & Dependencies
+## 💻 Setup & Installation
 
-### ✅ Required Libraries
-
-Install all dependencies using:
-
+### ✅ Install Required Libraries
 ```bash
 pip install transformers sentence-transformers matplotlib seaborn scikit-learn pandas
+```
 
-📁 Dataset Format
-Make sure to pre-download a dream dataset with the following columns:
-
-plaintext
-Copy
-Edit
+### 📁 Dataset Format
+CSV with the following columns:
+```
 dream_id, user_id, dream_text
-You can use datasets like DreamBank or generate synthetic dreams using LLMs.
+```
+Use datasets like [DreamBank](http://www.dreambank.net/) or generate synthetic dreams via LLMs.
 
-⚙️ Device Requirements
-⚡ GPU Recommended
-Due to transformer-based emotion and symbol analysis, the pipeline is GPU-intensive.
+### ⚙️ Device Requirements
+- ⚡ **GPU Recommended** (especially for transformer-based analysis)
+- 🆓 **No GPU? Run on Google Colab:**
+  1. Open `DreamProfiler.ipynb`
+  2. Navigate to `Runtime > Change runtime type`
+  3. Select **GPU** (T4 is automatically selected on free tier)
 
-🆓 If you do not have a GPU, run on Google Colab using Free T4 GPU:
+---
 
-Open Colab
+## 📊 Why Not Traditional NLP Metrics?
 
-Upload the DreamProfiler.ipynb notebook
+Dream interpretation is **subjective**, abstract, and emotion-driven. Therefore:
 
-Go to Runtime > Change runtime type and select:
+| ❌ Not Used | ✅ Instead |
+|------------|-----------|
+| BLEU, ROUGE, F1 | Emotion Entropy |
+| Classification Accuracy | Psychological Continuity |
+| Generic Sentiment Labels | User-specific Emotional Arcs |
 
-Hardware Accelerator: GPU
+---
 
-(T4 will be auto-selected)
+## 🔢 Emotion Entropy: The Key Metric
 
-🎯 Why No Traditional Accuracy Metrics?
-Dream interpretation is inherently subjective and emotionally abstract. Therefore:
+Emotion Entropy = how **focused** or **scattered** the detected emotional landscape is.
 
-❌ BLEU, ROUGE, or F1 scores are not meaningful
+| Interpretation Type | Entropy Score | Meaning |
+|---------------------|---------------|---------|
+| 🎯 Low Entropy      | 1.041         | Emotionally precise |
+| 🎲 High Entropy     | 1.734         | Emotionally ambiguous |
 
-✅ DreamProfiler uses clarity-based metrics like emotion entropy to compare internal emotional coherence
+👉 **Lower is better** — DreamProfiler shows consistently **lower entropy** than baseline models like DreamNet.
 
-✅ User-specific profiling focuses on psychological continuity, not classification correctness
+---
 
-📊 Comparative Evaluation
-Metric	DreamProfiler	DreamNet	Better
-Emotion focus (entropy)	🔍 1.041 (lower)	🎲 1.734 (higher)	✅ DreamProfiler
-Dominant emotion alignment	✅ Yes	❌ Weak	✅ DreamProfiler
-Symbol breakdown	✅ Rich	❌ Vague	✅ DreamProfiler
-Justification	✅ Provided	❌ None	✅ DreamProfiler
-Charts clarity	✅ Structured	❌ Flat	✅ DreamProfiler
+## 📊 Comparative Evaluation
 
-🔢 Why Emotion Entropy?
-Emotion Entropy measures how focused or scattered the model's emotional interpretation is.
+| Metric                      | DreamProfiler ✅ | DreamNet ❌ | Winner        |
+|-----------------------------|------------------|-------------|---------------|
+| Emotion focus (entropy)     | 1.041 (lower)     | 1.734       | ✅ DreamProfiler |
+| Dominant emotion alignment  | Yes               | Weak        | ✅ DreamProfiler |
+| Symbol breakdown            | Rich              | Vague       | ✅ DreamProfiler |
+| Interpretation justification| Provided          | None        | ✅ DreamProfiler |
+| Visualization Clarity       | Structured        | Flat        | ✅ DreamProfiler |
 
-Lower entropy → One or few dominant emotions → emotionally precise
+---
 
-Higher entropy → Spread across emotions → emotionally ambiguous
+## 🧠 Key Modules
 
-DreamProfiler consistently exhibits lower entropy, indicating stronger emotional clarity in dream interpretation.
+- `EmotionAnalyzer` – Emotion detection via Transformer models  
+- `DreamEmbedder` – Embeds dream context using Sentence-BERT  
+- `ProfileBuilder` – Extracts dominant emotions, recurring symbols  
+- `DreamComparator` – Compares emotional evolution across dreams/models  
+- `Visualizer` – Graphs entropy, emotion arcs, symbol frequencies  
 
-🧠 Key Modules
-Emotion Analysis: Emotion detection using transformer models
+---
 
-Dream Embedding: User-specific memory via BERT-style embeddings
+## 📂 Project Structure
 
-Dream Profiling: Extracts emotional patterns and top symbols
-
-Comparative Visualization: Graph-based comparison across dreams/models
-
-📂 Project Structure
-bash
-Copy
-Edit
+```
 DreamProfiler/
-├── dataset/                # Pre-downloaded dreams
+├── dataset/                # Pre-downloaded dream CSVs
 ├── DreamProfiler.ipynb     # Main pipeline notebook
 ├── utils/                  # Helper scripts (optional)
-└── README.md               # Project documentation
-🚀 Future Scope
-Feedback-based interpretation refinement
+└── README.md               # This documentation
+```
 
-Integration of cultural symbolism and dream motifs
+---
 
-Interactive web dashboard for dream history exploration
+## 🚀 Future Enhancements
 
-✅ Get Started
-Load your dataset, start the notebook, and let DreamProfiler begin decoding the subconscious world — dream by dream.
+- 🔁 Feedback-driven interpretation refinement  
+- 🌍 Integration of cultural symbolism + dream archetypes  
+- 📊 Interactive dashboard for personal dream analysis  
 
-vbnet
-Copy
-Edit
+---
 
-Let me know if you want this saved as `README.md` or auto-formatted into a downloadable PDF.
+## ✅ Getting Started
+
+1. Prepare your dataset
+2. Launch the notebook
+3. Let DreamProfiler begin decoding your subconscious – dream by dream 🧘‍♂️🌌
