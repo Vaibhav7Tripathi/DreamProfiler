@@ -31,7 +31,10 @@ CSV with the following columns:
 ```
 dream_id, user_id, dream_text
 ```
-Use datasets like [DreamBank](http://www.dreambank.net/) or generate synthetic dreams via LLMs.
+
+You can start with the included **`dream_dataset.csv`** containing 10,000 sample dreams.
+
+Later, expand with more detailed and structured dream entries from sources like [DreamBank](http://www.dreambank.net/) for advanced analysis.
 
 ### ⚙️ Device Requirements
 - ⚡ **GPU Recommended** (especially for transformer-based analysis)
@@ -83,7 +86,7 @@ Emotion Entropy = how **focused** or **scattered** the detected emotional landsc
 
 Below is the complete interpretation pipeline used by DreamProfiler:
 
-![DreamProfiler Flowchart](./Flowchart.png)
+![DreamProfiler Flowchart](./flowchart%202.png)
 
 ---
 
@@ -97,6 +100,6 @@ Below is the complete interpretation pipeline used by DreamProfiler:
 
 ## ✅ Getting Started
 
-1. Prepare your dataset
+1. Prepare your dataset (`dream_dataset.csv` or your own)
 2. Launch the notebook
 3. Let DreamProfiler begin decoding your subconscious – dream by dream 🧘‍♂️🌌
