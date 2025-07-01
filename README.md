@@ -79,25 +79,11 @@ Emotion Entropy = how **focused** or **scattered** the detected emotional landsc
 
 ---
 
-## 🧠 Key Modules
+## 🔄 End-to-End Flow
 
-- `EmotionAnalyzer` – Emotion detection via Transformer models  
-- `DreamEmbedder` – Embeds dream context using Sentence-BERT  
-- `ProfileBuilder` – Extracts dominant emotions, recurring symbols  
-- `DreamComparator` – Compares emotional evolution across dreams/models  
-- `Visualizer` – Graphs entropy, emotion arcs, symbol frequencies  
+Below is the complete interpretation pipeline used by DreamProfiler:
 
----
-
-## 📂 Project Structure
-
-```
-DreamProfiler/
-├── dataset/                # Pre-downloaded dream CSVs
-├── DreamProfiler.ipynb     # Main pipeline notebook
-├── utils/                  # Helper scripts (optional)
-└── README.md               # This documentation
-```
+![DreamProfiler Flowchart](./Flowchart.png)
 
 ---
 
