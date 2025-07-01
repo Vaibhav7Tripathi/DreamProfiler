@@ -26,7 +26,33 @@ DreamProfiler is an intelligent, memory-based AI system that interprets dreams t
 pip install transformers sentence-transformers matplotlib seaborn scikit-learn pandas
 ```
 
-### 📁 Dataset Format
+---
+
+## 🔐 Hugging Face Token Required
+
+DreamProfiler uses pre-trained transformer models from the [🤗 Hugging Face Hub](https://huggingface.co/) for:
+
+- Emotion classification
+- Embedding dream content
+- Language understanding for context-aware interpretation
+
+> To download these models, **a free Hugging Face access token** is required.
+
+### 🛠️ Steps to Generate a Read-Only Token:
+
+1. Go to: [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
+2. Click **New token**
+3. Name it (e.g., `dreamprofiler-token`)
+4. Set role as **Read**
+5. Copy the token
+
+Once generated, either:
+- Add it as an environment variable named `HUGGINGFACEHUB_API_TOKEN`, **or**
+- Paste it directly in the notebook when prompted
+
+---
+
+## 📁 Dataset Format
 CSV with the following columns:
 ```
 dream_id, user_id, dream_text
@@ -36,7 +62,9 @@ You can start with the included **`dream_dataset.csv`** containing 10,000 sample
 
 Later, expand with more detailed and structured dream entries from sources like [DreamBank](http://www.dreambank.net/) for advanced analysis.
 
-### ⚙️ Device Requirements
+---
+
+## ⚙️ Device Requirements
 - ⚡ **GPU Recommended** (especially for transformer-based analysis)
 - 🆓 **No GPU? Run on Google Colab:**
   1. Open `DreamProfiler.ipynb`
@@ -101,5 +129,6 @@ Below is the complete interpretation pipeline used by DreamProfiler:
 ## ✅ Getting Started
 
 1. Prepare your dataset (`dream_dataset.csv` or your own)
-2. Launch the notebook
-3. Let DreamProfiler begin decoding your subconscious – dream by dream 🧘‍♂️🌌
+2. Generate your Hugging Face token (see above)
+3. Launch the notebook
+4. Let DreamProfiler begin decoding your subconscious – dream by dream 🧘‍♂️🌌
